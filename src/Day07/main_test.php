@@ -2,7 +2,6 @@
 
 namespace Bake\AdventOfCode2015\Day07;
 
-require __DIR__ . '/../../vendor/autoload.php';
 require __DIR__ . '/main.php';
 
 test('day 7 part 1 sample', function (): void {
