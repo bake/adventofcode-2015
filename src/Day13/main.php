@@ -10,10 +10,6 @@ function input($handle): array
   while ($line = fgets($handle)) {
     $line = rtrim($line, "\n.");
     [$src, $dir, $num, $dst] = sscanf($line, '%s would %s %d happiness units by sitting next to %s');
-    // yield [$src, $dst, match ($dir) {
-    //   'gain' => $num,
-    //   'lose' => -$num,
-    // }];
     $happiness[$src][$dst] = match ($dir) {
       'gain' => $num,
       'lose' => -$num,
