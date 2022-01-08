@@ -64,7 +64,8 @@ function part1(string $molecule, array $replacements): int
 function part2(string $molecule, array $replacements): int
 {
   $depth = 0;
-  while ($molecule != 'e') {
+  while ($molecule !== 'e') {
+    $prev = $molecule;
     foreach ($replacements as $r) {
       if (!str_contains($molecule, $r->to)) {
         continue;
@@ -72,6 +73,8 @@ function part2(string $molecule, array $replacements): int
       $depth++;
       $molecule = preg_replace("/{$r->to}/", $r->from, $molecule, 1);
     }
+    if ($prev === $molecule) break;
+    $prev = $molecule;
   }
   return $depth;
 }
