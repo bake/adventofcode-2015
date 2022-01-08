@@ -9,7 +9,7 @@ function input($handle): array
 
 function part1(array $strings): int
 {
-  return count(array_filter($strings, nice1(...)));
+  return count(array_filter($strings, fn ($str) => nice1($str)));
 }
 
 function nice1(string $string): bool
@@ -23,7 +23,7 @@ function nice1(string $string): bool
 
 function part2(array $strings): int
 {
-  return count(array_filter($strings, nice2(...)));
+  return count(array_filter($strings, fn ($str) => nice2($str)));
 }
 
 function nice2(string $string): bool
